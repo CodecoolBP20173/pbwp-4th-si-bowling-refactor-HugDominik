@@ -1,4 +1,8 @@
 def score(game):
+    """
+    Calculates the score of the game.
+    Returns an integer.
+    """
     result = 0
     frame = 1
     in_first_half = True
@@ -7,8 +11,6 @@ def score(game):
             result += 10 - last
         else:
             result += get_value(game[i])
-        # if not in_first_half:
-            # frame += 1
         if frame < 10 and get_value(game[i]) == 10:
             if game[i] == '/':
                 result += get_value(game[i + 1])
@@ -34,7 +36,7 @@ def score(game):
 def get_value(char):
     """
     Defines the score of the game.
-    Returns an integer
+    Returns an integer.
     """
     if char in [str(num) for num in range(1, 10)]:
         return int(char)
